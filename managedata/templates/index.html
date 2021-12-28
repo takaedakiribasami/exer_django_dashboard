@@ -211,6 +211,20 @@
                                         <th>Belong</th>
                                     </tr>
                                 </thead>
+                                <tbody>
+                                    {% for person in person_list %}
+                                    <tr>
+                                        <th>{{ person.name }}</th>
+                                        <th>{{ person.furigana }}</th>
+                                        <th>{{ person.get_gender_display }}</th>
+                                        <th>{{ person.get_blood_type_display }}</th>
+                                        <th>{{ person.birthday }}</th>
+                                        <th>{{ person.tel_number }}</th>
+                                        <th>{{ person.email }}</th>
+                                        <th>{{ person.belong }}</th>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
                                 <tfoot>
                                     <tr>
                                         <th>Name</th>
@@ -223,22 +237,6 @@
                                         <th>Belong</th>
                                     </tr>
                                 </tfoot>
-                                {% for person in person_list %}
-                                <tbody>
-                                    <tr>
-                                        <th>{{ person.name }}</th>
-                                        <th>{{ person.furigana }}</th>
-                                        <th>{{ person.get_gender_display }}</th>
-                                        <th>{{ person.get_blood_type_display }}</th>
-                                        <th>{{ person.birthday }}</th>
-                                        <th>{{ person.tel_number }}</th>
-                                        <th>{{ person.email }}</th>
-                                        <th>{{ person.belong }}</th>
-                                    </tr>
-                                </tbody>
-                                {% empty %}
-                                <p>歌詞が登録されていません</p>
-                                {% endfor %}
                             </table>
                         </div>
                     </div>
@@ -262,8 +260,8 @@
         crossorigin="anonymous"></script>
     <script src="{% static 'js/scripts.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="assets/demo/chart-area-demo.js"></script>
-    <script src="assets/demo/chart-bar-demo.js"></script>
+    <!-- <script src="assets/demo/chart-area-demo.js"></script> -->
+    <!-- <script src="assets/demo/chart-bar-demo.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
     <script src="{% static 'js/datatables-simple-demo.js' %}"></script>
 </body>
